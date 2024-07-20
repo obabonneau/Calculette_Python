@@ -28,8 +28,6 @@ def run_calculation(user_choice):
             result = multiplication(num1, num2)
         case '4':
             result = division(num1, num2)
-        case _:
-            print("Choix invalide.")
     return result
 
 # Définition de la fonction de saisie des nombres
