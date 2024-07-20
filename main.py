@@ -53,7 +53,7 @@ def division(a, b):
     if b != 0:
         return a / b
     else:
-        print("Erreur : division par zéro")
+        return "Erreur : division par zéro"
 
 # Programme autolancé
 if __name__ == '__main__':
