@@ -32,9 +32,26 @@ def run_calculation(user_choice):
 
 # Définition de la fonction de saisie des nombres
 def input_two_number():
-    num1 = float(input("Entrez le premier nombre : "))
-    num2 = float(input("Entrez le deuxième nombre : "))
-    return num1, num2
+    user_chaine1 = input("Entrez le premier nombre : ")
+    while not conv_test_decimal(user_chaine1):
+        user_chaine1 = input("Nombre invalide, entrez le premier nombre : ")
+    user_chaine1 = conv_test_decimal(user_chaine1)[1]
+
+    user_chaine2 = input("Entrez le deuxième nombre : ")
+    while not conv_test_decimal(user_chaine2):
+        chaine2 = input("Nombre invalide, entrez le deuxième nombre : ")
+    user_chaine2 = conv_test_decimal(user_chaine2)[1]
+
+    return user_chaine1, user_chaine2
+
+# Définition de la fonction de test des nombres saisies 
+def conv_test_decimal(chaine):
+    try:
+        chaine = chaine.replace(',', '.') # Pour passer du format français au format anglais (1,5 = 1.5)
+        chaine = float(chaine)
+        return True, chaine
+    except ValueError:
+        return False
 
 # Définition de la fonction addition
 def sum(a, b):
