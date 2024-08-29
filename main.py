@@ -39,7 +39,7 @@ def input_two_number():
 
     user_chaine2 = input("Entrez le deuxième nombre : ")
     while not conv_test_decimal(user_chaine2):
-        chaine2 = input("Nombre invalide, entrez le deuxième nombre : ")
+        user_chaine2 = input("Nombre invalide, entrez le deuxième nombre : ")
     user_chaine2 = conv_test_decimal(user_chaine2)[1]
 
     return user_chaine1, user_chaine2
@@ -72,9 +72,13 @@ def division(a, b):
     else:
         return "Erreur : division par zéro"
 
-# Programme autolancé
-if __name__ == '__main__':
+# Définition de la fonction principale
+def main():
     print_welcome_message()
     user_choice = print_menu_and_get_choice()
     result = run_calculation(user_choice)
     print(result)
+
+# Execution de la fonction main si exécuté
+if __name__ == "__main__":
+    main()
